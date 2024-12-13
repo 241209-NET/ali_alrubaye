@@ -30,8 +30,8 @@ class Program
                 case 2:
                     Console.WriteLine("Select car make (Toyota, Honda, Nissan, or Tesla)");
                     string? userInputMake = Console.ReadLine();
-                    
-                    if(userInputMake.ToLower().Equals("toyota")){
+                    if(userInputMake!=null){
+                        if(userInputMake.ToLower().Equals("toyota")){
                          foreach (Car c in DummyData.GetCars()){
                          if(c.Make.Equals("Toyota")) Console.WriteLine(c);
                          } 
@@ -49,6 +49,7 @@ class Program
                          }
                     } else {
                         Console.WriteLine("Invalid input!");
+                    } 
                     }                    
                 break;
               
