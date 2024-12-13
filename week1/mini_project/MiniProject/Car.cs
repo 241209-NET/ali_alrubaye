@@ -19,8 +19,10 @@ public Car(string make, string model, int year, string color, double price, bool
     Ev = ev;
 }
 
-
-
+ public override string ToString()
+    {
+        return "Make:"+Make+" , "+"Model:"+Model+" , "+"Year:"+Year+" , "+"Color:"+Color+" , "+"Price $:"+Price+" , "+"EV:"+Ev;
+    }
 
 
 
