@@ -21,7 +21,10 @@ public Car(string make, string model, int year, string color, double price, bool
 
  public override string ToString()
     {
-        return "Make:"+Make+" , "+"Model:"+Model+" , "+"Year:"+Year+" , "+"Color:"+Color+" , "+"Price $:"+Price+" , "+"EV:"+Ev;
+        string str = String.Format("|{0,-12}|{1,-12}|{2,-12}|{3,-12}|{4,-12}|{5,-12}|", Make, Model, Year, Color, Price, Ev);
+        // "Make:"+Make+" , "+"Model:"+Model+" , "+"Year:"+Year+" , "+"Color:"+Color+" , "+"Price $:"+Price+" , "+"EV:"+Ev;
+
+        return str;
     }
 
 
