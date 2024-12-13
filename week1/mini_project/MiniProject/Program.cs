@@ -4,8 +4,11 @@ class Program
 {
     static void Main(string[] args)
     {
-        Car car = new();
+        DummyData.GetCars();
 
-        Console.WriteLine(car.Ev);
+        foreach (Car c in DummyData.GetCars()){
+            Console.WriteLine(c.Model);
+        }
+        
     }
 }

@@ -55,5 +55,8 @@ public static class DummyData{
     new(){Make = "Tesla", Model = "Cybertruck", Year = 2025, Color = "Black", Price = 125000.0, Ev = true},
   ];
 
+public static List<Car> GetCars(){
+    return carsData;
+}
 
 }
