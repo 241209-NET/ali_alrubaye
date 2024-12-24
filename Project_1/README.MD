@@ -9,7 +9,7 @@
 - Azure SQL Server
 
 ## Tables
-![ERD] (./ERD.png)
+![ERD](./ERD.png)
 
 
 
