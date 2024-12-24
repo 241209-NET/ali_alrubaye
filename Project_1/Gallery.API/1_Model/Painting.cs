@@ -7,5 +7,6 @@ public class Painting{
 
     public double Price {get;set;}
 
+    public required Artist Artist{get;set;}
 
 }
