@@ -7,4 +7,6 @@ public class Artist{
 
     public List<Painting> Paintings {get;set;}=[];
 
+    public List<Role> Roles {get;set;}=[];
+
 }

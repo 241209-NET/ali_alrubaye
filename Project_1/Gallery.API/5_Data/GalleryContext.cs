@@ -10,4 +10,5 @@ public class GalleryContext : DbContext{
     
     public DbSet<Artist> Artist {get;set;}
     public DbSet<Painting> Painting {get;set;}
+    public DbSet<Role> Role {get;set;}
 }
