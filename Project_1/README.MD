@@ -1,5 +1,5 @@
 # A Gallery API
-- Full Stack Web App made with .NET to help artists create and persist their painting inventory to a backend
+- A Web App made with .NET to help artists create and persist their painting inventory to a backend
 
 # Team members
 - Ali A.
