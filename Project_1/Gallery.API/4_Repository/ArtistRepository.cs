@@ -1,5 +1,5 @@
 namespace Gallery.API.Repository;
 
-public class ArtistRepository{
+public class UserRepository{
     
 }

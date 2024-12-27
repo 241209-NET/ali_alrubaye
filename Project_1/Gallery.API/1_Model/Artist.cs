@@ -1,6 +1,6 @@
 namespace Gallery.API.Model;
 
-public class Artist{
+public class User{
 
     public int Id {get; set;}
     public required string Name {get;set;}

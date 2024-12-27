@@ -4,7 +4,10 @@ namespace Gallery.API.Controller;
 
 [Route("api/[controller]")]
 [ApiController]
-public class ArtistController : ControllerBase{
+public class UserController : ControllerBase{
 
-
+[HttpGet]
+public IActionResult ReturnH(){
+    return Ok("Helloooooooooooooo");
+}
 }

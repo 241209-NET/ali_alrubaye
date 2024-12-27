@@ -8,7 +8,7 @@ public class GalleryContext : DbContext{
     public GalleryContext(){}
     public GalleryContext(DbContextOptions<GalleryContext> options) : base(options){}
     
-    public DbSet<Artist> Artist {get;set;}
+    public DbSet<User> User {get;set;}
     public DbSet<Painting> Painting {get;set;}
     public DbSet<Role> Role {get;set;}
 }
