@@ -1,3 +1,5 @@
+using Gallery.API.Model;
+using Gallery.API.Service;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Gallery.API.Controller;
@@ -6,8 +8,21 @@ namespace Gallery.API.Controller;
 [ApiController]
 public class UserController : ControllerBase{
 
+private readonly IUserService _userService;
+public UserController(IUserService userService) => _userService = userService;
+
 [HttpGet]
-public IActionResult ReturnH(){
-    return Ok("Helloooooooooooooo");
+public IActionResult GetAllUsers(){
+    var userList = _userService.GetAllUsers();
+    return Ok(userList);
 }
+
+[HttpPost]
+public IActionResult CreateNewUser(User user){
+    return Ok(_userService.CreateNewUser(user));
+}
+
+
+
+
 }

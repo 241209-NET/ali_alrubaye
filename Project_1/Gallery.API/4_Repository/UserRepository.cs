@@ -13,7 +13,9 @@ public class UserRepository : IUserRepository{
 
     public User CreateNewUser(User user)
     {
-            throw new NotImplementedException();
+            _galleryContext.Add(user);
+            _galleryContext.SaveChanges();
+            return user;
     }
 
     public User DeleteUserById(int id)

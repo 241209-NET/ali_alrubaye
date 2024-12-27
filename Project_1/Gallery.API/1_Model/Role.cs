@@ -8,7 +8,10 @@ public class Role{
     
     public int RoleId {get; set;}
     public required string Name {get;set;}
-    [ForeignKey("UserId")]
-    public required User User {get;set;}
+
+    [ForeignKey("User")]
+    public int  UserId {get;set;}
+
+    // public User User{get;set;}
 
 }

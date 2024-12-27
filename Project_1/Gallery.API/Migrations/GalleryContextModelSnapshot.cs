@@ -99,13 +99,11 @@ namespace Gallery.API.Migrations
 
             modelBuilder.Entity("Gallery.API.Model.Role", b =>
                 {
-                    b.HasOne("Gallery.API.Model.User", "User")
+                    b.HasOne("Gallery.API.Model.User", null)
                         .WithOne("Role")
                         .HasForeignKey("Gallery.API.Model.Role", "UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Gallery.API.Model.User", b =>

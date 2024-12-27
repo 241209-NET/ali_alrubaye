@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Gallery.API.Migrations
 {
     [DbContext(typeof(GalleryContext))]
-    [Migration("20241227042226_InitialCreate")]
+    [Migration("20241227055145_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -102,13 +102,11 @@ namespace Gallery.API.Migrations
 
             modelBuilder.Entity("Gallery.API.Model.Role", b =>
                 {
-                    b.HasOne("Gallery.API.Model.User", "User")
+                    b.HasOne("Gallery.API.Model.User", null)
                         .WithOne("Role")
                         .HasForeignKey("Gallery.API.Model.Role", "UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Gallery.API.Model.User", b =>

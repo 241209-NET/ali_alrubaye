@@ -1,4 +1,6 @@
 using Gallery.API.Data;
+using Gallery.API.Repository;
+using Gallery.API.Service;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,6 +13,12 @@ builder.Services.AddSwaggerGen();
 //Adding DbContext with connection string
 builder.Services.AddDbContext<GalleryContext>(options => 
     options.UseSqlServer(builder.Configuration.GetConnectionString("Gallery")));
+
+//Add service dependencies
+builder.Services.AddScoped<IUserService, UserService>();
+
+//Add repo dependencies
+builder.Services.AddScoped<IUserRepository, UserRepository>();
 
 //Adding controllers
 builder.Services.AddControllers().AddJsonOptions(options =>
