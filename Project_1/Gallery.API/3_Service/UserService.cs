@@ -15,7 +15,9 @@ public class UserService : IUserService{
     }
 
     public User CreateNewUser(User user){
-
+        
+        // Role role = new Role{Name = "Admin"};
+        // user.Role = role;
         return _userRepository.CreateNewUser(user);
     }
 }

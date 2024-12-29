@@ -58,13 +58,7 @@ namespace Gallery.API.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
-
                     b.HasKey("RoleId");
-
-                    b.HasIndex("UserId")
-                        .IsUnique();
 
                     b.ToTable("Role");
                 });
@@ -81,7 +75,12 @@ namespace Gallery.API.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("RoleId")
+                        .HasColumnType("int");
+
                     b.HasKey("UserId");
+
+                    b.HasIndex("RoleId");
 
                     b.ToTable("User");
                 });
@@ -97,21 +96,25 @@ namespace Gallery.API.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("Gallery.API.Model.Role", b =>
+            modelBuilder.Entity("Gallery.API.Model.User", b =>
                 {
-                    b.HasOne("Gallery.API.Model.User", null)
-                        .WithOne("Role")
-                        .HasForeignKey("Gallery.API.Model.Role", "UserId")
+                    b.HasOne("Gallery.API.Model.Role", "Role")
+                        .WithMany("users")
+                        .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Role");
+                });
+
+            modelBuilder.Entity("Gallery.API.Model.Role", b =>
+                {
+                    b.Navigation("users");
                 });
 
             modelBuilder.Entity("Gallery.API.Model.User", b =>
                 {
                     b.Navigation("Paintings");
-
-                    b.Navigation("Role")
-                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }
