@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Gallery.API.Migrations
 {
     [DbContext(typeof(GalleryContext))]
-    [Migration("20241227202909_InitialCreate")]
+    [Migration("20241229023524_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
