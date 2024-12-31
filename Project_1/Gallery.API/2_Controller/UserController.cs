@@ -22,6 +22,10 @@ public IActionResult CreateNewUser(User user){
     return Ok(_userService.CreateNewUser(user));
 }
 
+ [HttpGet("{id}")]
+public IActionResult RetrieveUserById(int id){
+    return Ok(_userService.GetUserById(id));
+}
 
 
 

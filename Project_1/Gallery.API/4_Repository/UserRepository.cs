@@ -26,14 +26,14 @@ public class UserRepository : IUserRepository{
     public IEnumerable<User> GetAllUsers()
     {
         return _galleryContext.User.Include(u => u.Paintings)
-            .ToList();
+                .ToList();
         
         
     }
 
     public User? GetUserById(int id)
     {
-        throw new NotImplementedException();
+        return _galleryContext.User.Find(id);
     }
 
     public User UpdateUser(User user)

@@ -46,23 +46,6 @@ namespace Gallery.API.Migrations
                     b.ToTable("Painting");
                 });
 
-            modelBuilder.Entity("Gallery.API.Model.Role", b =>
-                {
-                    b.Property<int>("RoleId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("RoleId"));
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("RoleId");
-
-                    b.ToTable("Role");
-                });
-
             modelBuilder.Entity("Gallery.API.Model.User", b =>
                 {
                     b.Property<int>("UserId")
@@ -75,12 +58,11 @@ namespace Gallery.API.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("RoleId")
-                        .HasColumnType("int");
+                    b.Property<string>("Role")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("UserId");
-
-                    b.HasIndex("RoleId");
 
                     b.ToTable("User");
                 });
@@ -94,22 +76,6 @@ namespace Gallery.API.Migrations
                         .IsRequired();
 
                     b.Navigation("User");
-                });
-
-            modelBuilder.Entity("Gallery.API.Model.User", b =>
-                {
-                    b.HasOne("Gallery.API.Model.Role", "Role")
-                        .WithMany("users")
-                        .HasForeignKey("RoleId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Role");
-                });
-
-            modelBuilder.Entity("Gallery.API.Model.Role", b =>
-                {
-                    b.Navigation("users");
                 });
 
             modelBuilder.Entity("Gallery.API.Model.User", b =>

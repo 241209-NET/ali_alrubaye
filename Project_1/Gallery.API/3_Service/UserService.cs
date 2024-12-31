@@ -14,10 +14,12 @@ public class UserService : IUserService{
         return _userRepository.GetAllUsers();
     }
 
-    public User CreateNewUser(User user){
-        
-        // Role role = new Role{Name = "Admin"};
-        // user.Role = role;
-        return _userRepository.CreateNewUser(user);
+    public User CreateNewUser(User user){        
+       return _userRepository.CreateNewUser(user);
+    }
+
+    public User? GetUserById(int id)
+    {
+        return _userRepository.GetUserById(id);
     }
 }

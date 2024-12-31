@@ -10,5 +10,4 @@ public class GalleryContext : DbContext{
     
     public DbSet<User> User {get;set;}
     public DbSet<Painting> Painting {get;set;}
-    public DbSet<Role> Role {get;set;}
 }
