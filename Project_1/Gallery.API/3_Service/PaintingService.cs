@@ -12,31 +12,31 @@ public class PaintingService : IPaintingService {
     
     public Painting CreateNewPainting(Painting painting)
     {
-        throw new NotImplementedException();
+        return _paintingRespository.CreateNewPainting(painting);
     }
 
     public Painting DeletePaintingById(int id)
     {
-        throw new NotImplementedException();
+        return _paintingRespository.DeletePaintingById(id);
     }
 
     public IEnumerable<Painting> GetAllPaintings()
     {
-        throw new NotImplementedException();
+        return _paintingRespository.GetAllPaintings();
     }
 
     public Painting GetPaintingById(int id)
     {
-        throw new NotImplementedException();
+        return _paintingRespository.GetPaintingById(id);
     }
 
     public IEnumerable<Painting> GetPaintingByName(string name)
     {
-        throw new NotImplementedException();
+        return _paintingRespository.GetPaintingByName(name);
     }
 
     public Painting UpdatePainting(Painting painting)
     {
-        throw new NotImplementedException();
+        return _paintingRespository.UpdatePainting(painting);
     }
 }

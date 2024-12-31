@@ -27,8 +27,7 @@ public class PaintingRepository : IPaintingRepository{
 
     public IEnumerable<Painting> GetAllPaintings()
     {
-        return _galleryContext.Painting.Include(u => u.User)
-                .ToList();
+        return _galleryContext.Painting.Include(u => u.User).ToList();
     }
 
     public Painting? GetPaintingById(int id)

@@ -16,9 +16,11 @@ builder.Services.AddDbContext<GalleryContext>(options =>
 
 //Add service dependencies
 builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IPaintingService, PaintingService>();
 
 //Add repo dependencies
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IPaintingRepository, PaintingRepository>();
 
 //Adding controllers
 builder.Services.AddControllers().AddJsonOptions(options =>
