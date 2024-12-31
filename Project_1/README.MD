@@ -28,11 +28,18 @@
 ![ERD](./ERD.png)
 
 # MVP Goals
-- Artist can create a new account
-- Artist can add a new painting
-- Artist can retrieve a painting
-- Artist can delete a painting
-- Artist can update a painting
+- User can create a new account with a specific role
+    - Admin
+    - Artist
+    - Guest
+- User can add a new painting. Must be
+    - Admin
+    - Artist
+- User can retrieve/update/delete a painting. Must be
+    - Admin
+    - Artist
+- Users can delete their accounts. Any role
+- User can display all paintings. Any role
 
 
 
