@@ -5205,19 +5205,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ok\\.nuget\\packages\\": {}
+    "C:\\Users\\d\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ok\\Desktop\\trainer rep\\ali_alrubaye\\Project_1\\Gallery.API\\Gallery.API.csproj",
+      "projectUniqueName": "C:\\Users\\d\\Desktop\\Revature Repositories\\ali_alrubaye\\Project_1\\Gallery.API\\Gallery.API.csproj",
       "projectName": "Gallery.API",
-      "projectPath": "C:\\Users\\ok\\Desktop\\trainer rep\\ali_alrubaye\\Project_1\\Gallery.API\\Gallery.API.csproj",
-      "packagesPath": "C:\\Users\\ok\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ok\\Desktop\\trainer rep\\ali_alrubaye\\Project_1\\Gallery.API\\obj\\",
+      "projectPath": "C:\\Users\\d\\Desktop\\Revature Repositories\\ali_alrubaye\\Project_1\\Gallery.API\\Gallery.API.csproj",
+      "packagesPath": "C:\\Users\\d\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\d\\Desktop\\Revature Repositories\\ali_alrubaye\\Project_1\\Gallery.API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\ok\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\d\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
