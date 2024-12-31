@@ -1,3 +1,4 @@
+using Gallery.API.DTO;
 using Gallery.API.Model;
 using Gallery.API.Service;
 using Microsoft.AspNetCore.Mvc;
@@ -17,8 +18,13 @@ public IActionResult GetAllUsers(){
     return Ok(userList);
 }
 
+// [HttpPost]
+// public IActionResult CreateNewUser(User user){
+//     return Ok(_userService.CreateNewUser(user));
+// }
 [HttpPost]
-public IActionResult CreateNewUser(User user){
+public IActionResult CreateNewUser(UserDTO dto){
+    User user = new User{Role=dto.Role, Name=dto.Name, Paintings=[]};
     return Ok(_userService.CreateNewUser(user));
 }
 
