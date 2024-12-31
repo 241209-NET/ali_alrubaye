@@ -38,6 +38,8 @@
 - User can retrieve/update/delete a painting. Must be
     - Admin
     - Artist
+- User can display all accounts. Must be
+    - Admin
 - Users can delete their accounts. Any role
 - User can display all paintings. Any role
 

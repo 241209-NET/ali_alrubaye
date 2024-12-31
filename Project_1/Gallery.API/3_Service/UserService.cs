@@ -22,4 +22,9 @@ public class UserService : IUserService{
     {
         return _userRepository.GetUserById(id);
     }
+
+    public User DeleteUserById(int id)
+    {
+        return _userRepository.DeleteUserById(id);
+    }
 }

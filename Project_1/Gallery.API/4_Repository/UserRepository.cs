@@ -20,7 +20,12 @@ public class UserRepository : IUserRepository{
 
     public User DeleteUserById(int id)
     {
-        throw new NotImplementedException();
+        // var user = _galleryContext.User.FirstOrDefault(u => u.UserId==id);
+        // return _galleryContext.User.Remove(user);
+        User? u = _galleryContext.User.Find(id);
+        _galleryContext.User.Remove(u);
+        _galleryContext.SaveChanges();
+        return u;
     }
 
     public IEnumerable<User> GetAllUsers()
@@ -36,8 +41,5 @@ public class UserRepository : IUserRepository{
         return _galleryContext.User.Find(id);
     }
 
-    public User UpdateUser(User user)
-    {
-        throw new NotImplementedException();
-    }
+    
 }

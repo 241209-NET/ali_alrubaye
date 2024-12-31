@@ -8,11 +8,16 @@ public interface IUserRepository{
     User? GetUserById(int id);
     User CreateNewUser(User user);
     User DeleteUserById(int id);  
-    User UpdateUser(User user); 
     
 }
 
 public interface IPaintingRepository{
      
+     IEnumerable<Painting> GetAllPaintings();
+     Painting CreateNewPainting(Painting painting);
+     Painting GetPaintingById(int id);
+     IEnumerable<Painting> GetPaintingByName(string name);
+     Painting UpdatePainting(Painting painting);
+     Painting DeletePaintingById(int id);
 }
 

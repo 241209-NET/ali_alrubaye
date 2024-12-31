@@ -22,9 +22,14 @@ public IActionResult CreateNewUser(User user){
     return Ok(_userService.CreateNewUser(user));
 }
 
- [HttpGet("{id}")]
+[HttpGet("{id}")]
 public IActionResult RetrieveUserById(int id){
     return Ok(_userService.GetUserById(id));
+}
+
+[HttpDelete("{id}")]
+public IActionResult DeleteTheUserById(int id){
+    return Ok(_userService.DeleteUserById(id));
 }
 
 
