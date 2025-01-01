@@ -19,12 +19,27 @@ public IActionResult RetrieveAllPaintings(){
 
 [HttpGet("{id}")]
 public IActionResult RetrievePaintingById(int id){
-    return Ok(_paintingService.GetPaintingById(id));
+    try
+    {
+        return Ok(_paintingService.GetPaintingById(id));
+    }
+    catch (Exception e)
+    {
+        return Conflict(e.Message);
+    }
 }
 
 [HttpDelete("{id}")]
 public IActionResult DeletePaintingById(int id){
-    return Ok(_paintingService.DeletePaintingById(id));
+    try
+    {
+        return Ok(_paintingService.DeletePaintingById(id));
+    }
+    catch (Exception e)
+    {
+        return Conflict(e.Message);
+    }
+    
 }
 
 [HttpGet("byname/{name}")]
@@ -35,12 +50,28 @@ public IActionResult RetrievePaintingByName(string name){
 
 [HttpPost]
 public IActionResult AddNewPainting(PaintingDTO dto){
-    return Ok(_paintingService.CreateNewPainting(dto));
+    try
+    {
+        return Ok(_paintingService.CreateNewPainting(dto));
+    }
+    catch (Exception e)
+    {
+        return Conflict(e.Message);
+    }
+    
 }
 
 [HttpPut]
-public IActionResult UpdateExistingPainting(PaintingUpdateDTO dto){    
-    return Ok(_paintingService.UpdatePainting(dto));
+public IActionResult UpdateExistingPainting(PaintingUpdateDTO dto){ 
+    try
+    {
+        return Ok(_paintingService.UpdatePainting(dto));
+    }
+    catch (Exception e)
+    {
+        return Conflict(e.Message);
+    }   
+    
 }
 
 
