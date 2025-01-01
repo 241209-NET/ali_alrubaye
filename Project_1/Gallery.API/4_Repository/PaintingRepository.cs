@@ -30,16 +30,16 @@ public class PaintingRepository : IPaintingRepository{
         return new Painting{
                 Name=dto.Title_Of_Painting,
                 Price=dto.Price_Estimate,
-                User=user
+                User=user!
             };
     }
 
     public Painting DeletePaintingById(int id)
     {
         Painting? p = _galleryContext.Painting.Find(id);
-        _galleryContext.Painting.Remove(p);
+        _galleryContext.Painting.Remove(p!);
         _galleryContext.SaveChanges();
-        return p;
+        return p!;
     }
 
     public IEnumerable<Painting> GetAllPaintings()
@@ -47,16 +47,15 @@ public class PaintingRepository : IPaintingRepository{
         return _galleryContext.Painting.Include(u => u.User).ToList();
     }
 
-    public Painting? GetPaintingById(int id)
+    public Painting GetPaintingById(int id)
     {
-        return _galleryContext.Painting.Find(id);
+        return _galleryContext.Painting.Find(id)!;
     }
 
     public  IEnumerable<Painting> GetPaintingByName(string name)
     {
          return _galleryContext.Painting.Where(p => p.Name.Contains(name)).ToList();
     }
-
     
 
     public Painting UpdatePainting(PaintingUpdateDTO dto)
@@ -68,9 +67,9 @@ public class PaintingRepository : IPaintingRepository{
                 painting.Price=dto.New_Price_Estimate;
             };
 
-            _galleryContext.Painting.Update(painting);
+            _galleryContext.Painting.Update(painting!);
             _galleryContext.SaveChanges();
-            return _galleryContext.Painting.FirstOrDefault(p=>p.PaintingId==dto.Id_Of_Painting);
+            return _galleryContext.Painting.FirstOrDefault(p=>p.PaintingId==dto.Id_Of_Painting)!;
         
         
         

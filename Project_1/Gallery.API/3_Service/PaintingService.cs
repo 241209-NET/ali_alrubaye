@@ -4,12 +4,13 @@ using Gallery.API.Repository;
 
 namespace Gallery.API.Service;
 
-public class PaintingService : IPaintingService {
+public class PaintingService(IPaintingRepository paintingRepository, IUserRepository userRepository) : IPaintingService {
 
-    private readonly IPaintingRepository _paintingRespository;
-    public PaintingService(IPaintingRepository paintingRepository) => _paintingRespository = paintingRepository;
+    private readonly IPaintingRepository _paintingRespository = paintingRepository;
+    private readonly IUserRepository _userRepository = userRepository;
 
-    
+
+
     public Painting CreateNewPainting(PaintingDTO dto)
     {
         
