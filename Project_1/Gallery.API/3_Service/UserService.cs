@@ -20,6 +20,7 @@ public class UserService : IUserService{
 
     public User? GetUserById(int id)
     {
+        
         return _userRepository.GetUserById(id);
     }
 

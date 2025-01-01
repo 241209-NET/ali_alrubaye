@@ -20,12 +20,10 @@ public class UserRepository : IUserRepository{
 
     public User DeleteUserById(int id)
     {
-        // var user = _galleryContext.User.FirstOrDefault(u => u.UserId==id);
-        // return _galleryContext.User.Remove(user);
         User? u = _galleryContext.User.Find(id);
-        _galleryContext.User.Remove(u);
+        _galleryContext.User.Remove(u!);
         _galleryContext.SaveChanges();
-        return u;
+        return u!;
     }
 
     public IEnumerable<User> GetAllUsers()
