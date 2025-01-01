@@ -24,7 +24,7 @@ public IActionResult GetAllUsers(){
 // }
 [HttpPost]
 public IActionResult CreateNewUser(UserDTO dto){
-    User user = new User{Role=dto.Role, Name=dto.Name, Paintings=[]};
+    User user = new User{Role=dto.User_Role, Name=dto.User_Name, Paintings=[]};
     return Ok(_userService.CreateNewUser(user));
 }
 

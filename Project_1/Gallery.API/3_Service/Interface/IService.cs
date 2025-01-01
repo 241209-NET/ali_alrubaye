@@ -1,3 +1,4 @@
+using Gallery.API.DTO;
 using Gallery.API.Model;
 
 namespace Gallery.API.Service;
@@ -15,9 +16,10 @@ public interface IUserService
 public interface IPaintingService{
      
      IEnumerable<Painting> GetAllPaintings();
-     Painting CreateNewPainting(Painting painting);
+     Painting CreateNewPainting(PaintingDTO dto);
      Painting GetPaintingById(int id);
      IEnumerable<Painting> GetPaintingByName(string name);
-     Painting UpdatePainting(Painting painting);
+     Painting UpdatePainting(PaintingUpdateDTO dto);
      Painting DeletePaintingById(int id);
+
 }

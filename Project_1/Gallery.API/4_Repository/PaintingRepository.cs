@@ -1,6 +1,8 @@
 using Gallery.API.Data;
+using Gallery.API.DTO;
 using Gallery.API.Model;
 using Microsoft.EntityFrameworkCore;
+using System.Data;
 
 namespace Gallery.API.Repository;
 
@@ -10,11 +12,26 @@ public class PaintingRepository : IPaintingRepository{
 
     public PaintingRepository(GalleryContext galleryContext) => _galleryContext = galleryContext;
 
-    public Painting CreateNewPainting(Painting painting)
+
+    public Painting CreateNewPainting(PaintingDTO dto)
     {
-        _galleryContext.Painting.Add(painting);
-        _galleryContext.SaveChanges();
-        return painting;
+        //retrieve the user
+        var user = _galleryContext.User.FirstOrDefault(u=>u.UserId==dto.Owner_Artist_Id);
+        if(user != null){
+            var painting = new Painting{
+                Name=dto.Title_Of_Painting,
+                Price=dto.Price_Estimate,
+                User=user
+            };
+
+            _galleryContext.Painting.Add(painting);
+            _galleryContext.SaveChanges();
+        }
+        return new Painting{
+                Name=dto.Title_Of_Painting,
+                Price=dto.Price_Estimate,
+                User=user
+            };
     }
 
     public Painting DeletePaintingById(int id)
@@ -40,10 +57,25 @@ public class PaintingRepository : IPaintingRepository{
          return _galleryContext.Painting.Where(p => p.Name.Contains(name)).ToList();
     }
 
-    public Painting UpdatePainting(Painting painting)
+    
+
+    public Painting UpdatePainting(PaintingUpdateDTO dto)
     {
-        _galleryContext.Update(painting);
-        _galleryContext.SaveChanges();        
-        return _galleryContext.Painting.Find(painting.PaintingId);
+        //retrieve the painting
+        var painting = _galleryContext.Painting.FirstOrDefault(p=>p.PaintingId==dto.Id_Of_Painting);
+        if(painting != null){
+                painting.Name=dto.New_Title_Of_Painting;
+                painting.Price=dto.New_Price_Estimate;
+            };
+
+            _galleryContext.Painting.Update(painting);
+            _galleryContext.SaveChanges();
+            return _galleryContext.Painting.FirstOrDefault(p=>p.PaintingId==dto.Id_Of_Painting);
+        
+        
+        
     }
+         
+        
+    
 }

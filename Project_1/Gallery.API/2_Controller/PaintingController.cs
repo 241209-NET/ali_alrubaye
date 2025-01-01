@@ -1,3 +1,4 @@
+using Gallery.API.DTO;
 using Gallery.API.Model;
 using Gallery.API.Service;
 using Microsoft.AspNetCore.Mvc;
@@ -31,15 +32,18 @@ public IActionResult RetrievePaintingByName(string name){
     return Ok(_paintingService.GetPaintingByName(name));
 }
 
+
 [HttpPost]
-public IActionResult AddNewPainting(Painting painting){
-    return Ok(_paintingService.CreateNewPainting(painting));
+public IActionResult AddNewPainting(PaintingDTO dto){
+    return Ok(_paintingService.CreateNewPainting(dto));
 }
 
 [HttpPut]
-public IActionResult UpdateExistingPainting(Painting painting){    
-    return Ok(_paintingService.UpdatePainting(painting));
+public IActionResult UpdateExistingPainting(PaintingUpdateDTO dto){    
+    return Ok(_paintingService.UpdatePainting(dto));
 }
+
+
 
 
 }

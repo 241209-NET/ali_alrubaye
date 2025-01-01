@@ -1,3 +1,4 @@
+using Gallery.API.DTO;
 using Gallery.API.Model;
 using Gallery.API.Repository;
 
@@ -9,13 +10,13 @@ public class PaintingService : IPaintingService {
     public PaintingService(IPaintingRepository paintingRepository) => _paintingRespository = paintingRepository;
 
     
-    
-    public Painting CreateNewPainting(Painting painting)
+    public Painting CreateNewPainting(PaintingDTO dto)
     {
-        return _paintingRespository.CreateNewPainting(painting);
+        
+        return _paintingRespository.CreateNewPainting(dto);
     }
 
-    public Painting DeletePaintingById(int id)
+   public Painting DeletePaintingById(int id)
     {
         return _paintingRespository.DeletePaintingById(id);
     }
@@ -35,8 +36,12 @@ public class PaintingService : IPaintingService {
         return _paintingRespository.GetPaintingByName(name);
     }
 
-    public Painting UpdatePainting(Painting painting)
+    public Painting UpdatePainting(PaintingUpdateDTO dto)
     {
-        return _paintingRespository.UpdatePainting(painting);
+        return _paintingRespository.UpdatePainting(dto);
     }
+
+
+
+
 }
