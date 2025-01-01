@@ -20,7 +20,7 @@ public class UserRepository : IUserRepository{
 
     public User DeleteUserById(int id)
     {
-        User? u = _galleryContext.User.Find(id);
+        User? u = _galleryContext.User.FirstOrDefault(u=>u.UserId==id);
         _galleryContext.User.Remove(u!);
         _galleryContext.SaveChanges();
         return u!;
@@ -36,7 +36,7 @@ public class UserRepository : IUserRepository{
 
     public User? GetUserById(int id)
     {
-        return _galleryContext.User.Find(id);
+        return _galleryContext.User.FirstOrDefault(u=>u.UserId==id);
     }
 
     
