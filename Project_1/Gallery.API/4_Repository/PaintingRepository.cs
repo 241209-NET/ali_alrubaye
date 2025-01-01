@@ -15,18 +15,17 @@ public class PaintingRepository : IPaintingRepository{
 
     public Painting CreateNewPainting(PaintingDTO dto)
     {
-        //retrieve the user
+        //retrieve the user. Check nullable in Service Layer
         var user = _galleryContext.User.FirstOrDefault(u=>u.UserId==dto.Owner_Artist_Id);
-        if(user != null){
+
             var painting = new Painting{
                 Name=dto.Title_Of_Painting,
                 Price=dto.Price_Estimate,
-                User=user
-            };
-
+                User=user!
+            };        
             _galleryContext.Painting.Add(painting);
             _galleryContext.SaveChanges();
-        }
+
         return new Painting{
                 Name=dto.Title_Of_Painting,
                 Price=dto.Price_Estimate,
@@ -36,7 +35,7 @@ public class PaintingRepository : IPaintingRepository{
 
     public Painting DeletePaintingById(int id)
     {
-        Painting? p = _galleryContext.Painting.Find(id);
+        Painting? p = _galleryContext.Painting.FirstOrDefault(p=>p.PaintingId==id);
         _galleryContext.Painting.Remove(p!);
         _galleryContext.SaveChanges();
         return p!;
@@ -49,7 +48,7 @@ public class PaintingRepository : IPaintingRepository{
 
     public Painting GetPaintingById(int id)
     {
-        return _galleryContext.Painting.Find(id)!;
+        return _galleryContext.Painting.FirstOrDefault(p=>p.PaintingId==id)!;
     }
 
     public  IEnumerable<Painting> GetPaintingByName(string name)
@@ -62,10 +61,10 @@ public class PaintingRepository : IPaintingRepository{
     {
         //retrieve the painting
         var painting = _galleryContext.Painting.FirstOrDefault(p=>p.PaintingId==dto.Id_Of_Painting);
-        if(painting != null){
-                painting.Name=dto.New_Title_Of_Painting;
+        
+                painting!.Name=dto.New_Title_Of_Painting;
                 painting.Price=dto.New_Price_Estimate;
-            };
+           
 
             _galleryContext.Painting.Update(painting!);
             _galleryContext.SaveChanges();
