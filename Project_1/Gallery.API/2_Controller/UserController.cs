@@ -18,24 +18,49 @@ public IActionResult GetAllUsers(){
     return Ok(userList);
 }
 
-// [HttpPost]
-// public IActionResult CreateNewUser(User user){
-//     return Ok(_userService.CreateNewUser(user));
-// }
+
 [HttpPost]
 public IActionResult CreateNewUser(UserDTO dto){
-    User user = new User{Role=dto.User_Role, Name=dto.User_Name, Paintings=[]};
-    return Ok(_userService.CreateNewUser(user));
+
+    try
+    {
+        User user = new User{Role=dto.User_Role, Name=dto.User_Name, Paintings=[]};
+        return Ok(_userService.CreateNewUser(user));
+    }
+    catch (Exception e)
+    {
+        return Conflict(e.Message);        
+    }    
+
 }
 
 [HttpGet("{id}")]
 public IActionResult RetrieveUserById(int id){
-    return Ok(_userService.GetUserById(id));
+
+    try
+    {
+        return Ok(_userService.GetUserById(id));
+    }
+    catch (Exception e)
+    {
+        return Conflict(e.Message);
+    }
+    
 }
 
 [HttpDelete("{id}")]
 public IActionResult DeleteTheUserById(int id){
-    return Ok(_userService.DeleteUserById(id));
+
+    try
+    {
+        return Ok(_userService.DeleteUserById(id));
+    }
+    catch (Exception e)
+    {
+        return Conflict(e.Message);
+    }
+    
+    
 }
 
 

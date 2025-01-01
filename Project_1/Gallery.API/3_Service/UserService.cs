@@ -1,6 +1,7 @@
 using Gallery.API.CustomExceptions;
 using Gallery.API.Model;
 using Gallery.API.Repository;
+using Microsoft.IdentityModel.Tokens;
 
 namespace Gallery.API.Service;
 
@@ -23,7 +24,11 @@ public class UserService : IUserService{
        if (!rolesList.Contains(roleInput))
        {
         throw new Exception("user_Role must be: Admin, Artist, or Guest");
-       }       
+       } 
+       if (user.Name.IsNullOrEmpty())
+       {
+          throw new Exception("Invalid user_name was entered!");
+       }      
 
        return _userRepository.CreateNewUser(user);
     }
