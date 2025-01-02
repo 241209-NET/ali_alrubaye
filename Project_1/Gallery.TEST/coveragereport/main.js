@@ -221,8 +221,8 @@ var assemblies = [
   {
     "name": "Gallery.API",
     "classes": [
-      { "name": "Gallery.API.Service.PaintingService", "rp": "Gallery.API_PaintingService.html", "cl": 0, "ucl": 61, "cal": 61, "tl": 108, "cb": 0, "tb": 24, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
-      { "name": "Gallery.API.Service.UserService", "rp": "Gallery.API_UserService.html", "cl": 17, "ucl": 18, "cal": 35, "tl": 68, "cb": 4, "tb": 12, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "Gallery.API.Service.PaintingService", "rp": "Gallery.API_PaintingService.html", "cl": 14, "ucl": 47, "cal": 61, "tl": 108, "cb": 4, "tb": 24, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "Gallery.API.Service.UserService", "rp": "Gallery.API_UserService.html", "cl": 23, "ucl": 12, "cal": 35, "tl": 68, "cb": 6, "tb": 12, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
     ]},
 ];
 
@@ -238,12 +238,6 @@ var riskHotspotMetrics = [
 var riskHotspots = [
   {
     "assembly": "Gallery.API", "class": "Gallery.API.Service.PaintingService", "reportPath": "Gallery.API_PaintingService.html", "methodName": "CreateNewPainting(Gallery.API.DTO.PaintingDTO)", "methodShortName": "CreateNewPainting(...)", "fileIndex": 0, "line": 17,
-    "metrics": [
-      { "value": 72, "exceeded": true },
-      { "value": 8, "exceeded": false },
-    ]},
-  {
-    "assembly": "Gallery.API", "class": "Gallery.API.Service.PaintingService", "reportPath": "Gallery.API_PaintingService.html", "methodName": "UpdatePainting(Gallery.API.DTO.PaintingUpdateDTO)", "methodShortName": "UpdatePainting(...)", "fileIndex": 0, "line": 82,
     "metrics": [
       { "value": 72, "exceeded": true },
       { "value": 8, "exceeded": false },
