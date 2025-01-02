@@ -222,7 +222,7 @@ var assemblies = [
     "name": "Gallery.API",
     "classes": [
       { "name": "Gallery.API.Service.PaintingService", "rp": "Gallery.API_PaintingService.html", "cl": 0, "ucl": 61, "cal": 61, "tl": 108, "cb": 0, "tb": 24, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
-      { "name": "Gallery.API.Service.UserService", "rp": "Gallery.API_UserService.html", "cl": 11, "ucl": 24, "cal": 35, "tl": 68, "cb": 2, "tb": 12, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "Gallery.API.Service.UserService", "rp": "Gallery.API_UserService.html", "cl": 17, "ucl": 18, "cal": 35, "tl": 68, "cb": 4, "tb": 12, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
     ]},
 ];
 
