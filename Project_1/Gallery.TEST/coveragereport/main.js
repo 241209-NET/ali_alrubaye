@@ -221,22 +221,8 @@ var assemblies = [
   {
     "name": "Gallery.API",
     "classes": [
-      { "name": "Gallery.API.Controller.PaintingController", "rp": "Gallery.API_PaintingController.html", "cl": 0, "ucl": 35, "cal": 35, "tl": 80, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
-      { "name": "Gallery.API.Controller.UserController", "rp": "Gallery.API_UserController.html", "cl": 0, "ucl": 27, "cal": 27, "tl": 68, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
-      { "name": "Gallery.API.CustomExceptions.UserNotFoundException", "rp": "Gallery.API_UserNotFoundException.html", "cl": 0, "ucl": 9, "cal": 9, "tl": 16, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
-      { "name": "Gallery.API.Data.GalleryContext", "rp": "Gallery.API_GalleryContext.html", "cl": 0, "ucl": 4, "cal": 4, "tl": 13, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
-      { "name": "Gallery.API.DTO.PaintingDTO", "rp": "Gallery.API_PaintingDTO.html", "cl": 0, "ucl": 3, "cal": 3, "tl": 23, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
-      { "name": "Gallery.API.DTO.PaintingUpdateDTO", "rp": "Gallery.API_PaintingUpdateDTO.html", "cl": 0, "ucl": 3, "cal": 3, "tl": 23, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
-      { "name": "Gallery.API.DTO.UserDTO", "rp": "Gallery.API_UserDTO.html", "cl": 0, "ucl": 2, "cal": 2, "tl": 23, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
-      { "name": "Gallery.API.Migrations.GalleryContextModelSnapshot", "rp": "Gallery.API_GalleryContextModelSnapshot.html", "cl": 0, "ucl": 64, "cal": 64, "tl": 88, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
-      { "name": "Gallery.API.Migrations.RefactoredDatabaseMigration", "rp": "Gallery.API_RefactoredDatabaseMigration.html", "cl": 0, "ucl": 109, "cal": 109, "tl": 155, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
-      { "name": "Gallery.API.Model.Painting", "rp": "Gallery.API_Painting.html", "cl": 0, "ucl": 4, "cal": 4, "tl": 12, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
-      { "name": "Gallery.API.Model.User", "rp": "Gallery.API_User.html", "cl": 4, "ucl": 0, "cal": 4, "tl": 13, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
-      { "name": "Gallery.API.Repository.PaintingRepository", "rp": "Gallery.API_PaintingRepository.html", "cl": 0, "ucl": 39, "cal": 39, "tl": 79, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
-      { "name": "Gallery.API.Repository.UserRepository", "rp": "Gallery.API_UserRepository.html", "cl": 0, "ucl": 19, "cal": 19, "tl": 43, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "Gallery.API.Service.PaintingService", "rp": "Gallery.API_PaintingService.html", "cl": 0, "ucl": 61, "cal": 61, "tl": 108, "cb": 0, "tb": 24, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
-      { "name": "Gallery.API.Service.UserService", "rp": "Gallery.API_UserService.html", "cl": 8, "ucl": 27, "cal": 35, "tl": 68, "cb": 2, "tb": 12, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
-      { "name": "Program", "rp": "Gallery.API_Program.html", "cl": 0, "ucl": 22, "cal": 22, "tl": 45, "cb": 0, "tb": 2, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "Gallery.API.Service.UserService", "rp": "Gallery.API_UserService.html", "cl": 11, "ucl": 24, "cal": 35, "tl": 68, "cb": 2, "tb": 12, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
     ]},
 ];
 

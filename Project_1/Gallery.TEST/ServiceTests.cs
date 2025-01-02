@@ -5,10 +5,10 @@ using Moq;
 
 namespace Gallery.TEST;
 
-public class UserServiceTests
+public class ServiceTests
 {
     [Fact]
-    public void TestCreateNewUser()
+    public void TestCreateNewUserSucessful()
     {
 
         //arrange
@@ -31,10 +31,33 @@ public class UserServiceTests
 
         //assert
         Assert.Contains(u, userList);
-        mockRepo.Verify(a => a.CreateNewUser(It.IsAny<User>()), Times.Once());
-        
-        
+        mockRepo.Verify(a => a.CreateNewUser(It.IsAny<User>()), Times.Once());        
     }
 
-    
+    [Fact]
+    public void TestGetAllUsersSuccessful(){
+        
+        
+        //arrange
+        Mock<IUserRepository> mockRepo = new();
+        UserService userService = new(mockRepo.Object);
+
+        List<User> userList = [
+            new User{UserId = 1, Role = "Admin", Name= "adm", Paintings=[]},
+            new User{UserId = 2, Role = "Artist", Name= "art", Paintings=[]},
+            new User{UserId = 3, Role = "Guest", Name= "gst", Paintings=[]}
+        ];
+
+        mockRepo.Setup(repo => repo.GetAllUsers()).Returns(userList);
+
+        //act
+        var result = userService.GetAllUsers().ToList();
+
+        //assert
+        Assert.Equal(userList, result);
+
+
+    }
+
+
 }
